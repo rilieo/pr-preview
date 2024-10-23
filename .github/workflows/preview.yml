@@ -13,6 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install and Build
+        if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
+        run: |
+          npm install
+          npm run build
       - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@v1
         with:
