@@ -13,10 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}  # Checkout the branch associated with the PR
       - name: Deploy PR Preview
-        uses: rossjrw/pr-preview-action@v1
+        uses: rossjrw/pr-preview-action@v1.4.8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          source-dir: dist
+          source-dir: .
           umbrella-dir: pr-preview
           action: auto
