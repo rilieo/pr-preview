@@ -1,5 +1,4 @@
-# .github/workflows/preview.yml
-name: Deploy PR previews
+name: Deploy PR Previews
 
 on:
   pull_request:
@@ -8,6 +7,8 @@ on:
       - reopened
       - synchronize
       - closed
+  pull_request_target:
+    types:
       - labeled
 
 concurrency: preview-${{ github.ref }}
@@ -15,13 +16,13 @@ concurrency: preview-${{ github.ref }}
 jobs:
   deploy-preview:
     runs-on: ubuntu-20.04
-    if: github.event.label.name == 'preview'
+    if: contains(github.event.pull_request.labels.*.name, 'preview')
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Install and Build
-        if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
+        if: github.event.action != 'closed' # Skip the build if the PR is closed
         run: |
           npm install
           npm run build
