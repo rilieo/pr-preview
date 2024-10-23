@@ -17,7 +17,6 @@ jobs:
         uses: rossjrw/pr-preview-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          preview-branch: main
           source-dir: dist
           umbrella-dir: pr-preview
           action: auto
