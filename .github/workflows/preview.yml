@@ -1,30 +1,23 @@
-# .github/workflows/preview.yml
+# .github/workflows/deploy.yml
 name: Deploy PR previews
-
 on:
+  push:
+    branches:
+      - main
   pull_request:
     types:
       - opened
-      - reopened
-      - synchronize
-      - closed
-
-concurrency: preview-${{ github.ref }}
-
+      - synchronize    
 jobs:
   deploy-preview:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Install and Build
-        if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
-        run: |
-          npm ci
-          npm run build
-
-      - name: Deploy preview
+      - uses: actions/checkout@v4
+      - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: ./dist/
+          token: ${{ secrets.GITHUB_TOKEN }}
+          preview-branch: main
+          source-dir: .
+          umbrella-dir: pr-preview
+          action: auto
