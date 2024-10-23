@@ -8,6 +8,9 @@ on:
       - reopened
       - synchronize
       - closed
+  pull_request_target:
+    types:
+      - labeled
 
 concurrency: preview-${{ github.ref }}
 
