@@ -23,7 +23,6 @@ jobs:
         run: |
           npm ci
           npm run build
-          ls -l dist
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
