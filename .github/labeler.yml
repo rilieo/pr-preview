@@ -15,7 +15,7 @@
 #   - any-glob-to-any-file: './src/sections/landing'
 products:
 - changed-files:
-  - any-glob-to-any-file: './src/sections/products'
+  - any-glob-to-any-file: 'src/sections/products'
 preview:
 - changed-files:
-  - any-glob-to-any-file: './src/*'
+  - any-glob-to-any-file: 'src/*'

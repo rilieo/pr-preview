@@ -1,8 +1,6 @@
 name: "Pull Request Labeler"
 on:
 - pull_request_target
-- issues
-- issue_comment
 
 jobs:
   labeler:
@@ -15,11 +13,5 @@ jobs:
       uses: actions/checkout@v4
 
     - uses: actions/labeler@v5
-      with:
+      with: 
         sync-labels: true
-        configuration-path: .github/labeler.yml
-        dot: true
-    
-      env:
-        REPO: ${{ github.event.repository.name }}
-        ISSUE_NUMBER: ${{ github.event.issue.number }}
