@@ -1,3 +1,7 @@
 preview:
 - changed-files:
   - any-glob-to-any-file: '*'
+
+done:
+- changed-files:
+  - any-glob-to-any-file: 'src/**/*'
