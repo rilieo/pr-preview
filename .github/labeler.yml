@@ -5,3 +5,7 @@ preview:
 events:
 - changed-files:
   - any-glob-to-any-file: 'src/sections/events/**/*'
+
+landing:
+- changed-files:
+  - any-glob-to-any-file: 'src/sections/landing/**/*'
