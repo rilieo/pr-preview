@@ -1,0 +1,18 @@
+section:
+- changed-files:
+  - any-glob-to-any-file: './src/sections/*'
+about:
+- changed-files:
+  - any-glob-to-any-file: './src/sections/about'
+ambassadorProgram:
+- changed-files:
+  - any-glob-to-any-file: './src/sections/ambassadorProgram'
+events:
+- changed-files:
+  - any-glob-to-any-file: './src/sections/events'
+landing:
+- changed-files:
+  - any-glob-to-any-file: './src/sections/landing'
+products:
+- changed-files:
+  - any-glob-to-any-file: './src/sections/products'
