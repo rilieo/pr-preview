@@ -9,7 +9,6 @@ on:
       - synchronize
       - closed
 
-name: Deploy PR previews
 concurrency: preview-${{ github.ref }}
 jobs:
   deploy-preview:
