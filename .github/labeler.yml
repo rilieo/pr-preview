@@ -16,3 +16,7 @@ landing:
 products:
 - changed-files:
   - any-glob-to-any-file: './src/sections/products'
+
+preview:
+- changed-files:
+  - any-glob-to-any-file: './src/*'
