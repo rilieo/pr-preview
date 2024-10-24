@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://rilieo.github.io/yay/",
+  "homepage": "https://rilieo.github.io/pr-preview/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
