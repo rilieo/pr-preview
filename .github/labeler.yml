@@ -2,6 +2,6 @@ preview:
 - changed-files:
   - any-glob-to-any-file: '*'
 
-done:
+events:
 - changed-files:
-  - any-glob-to-any-file: 'src/**/*'
+  - any-glob-to-any-file: 'src/sections/events/**/*'
